@@ -6,3 +6,9 @@ class text(models.Model):
     description = models.CharField(max_length = 500)
     update_day = models.DateField(auto_now=True)
     create_day = models.DateField(auto_now_add=True)
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.CharField(max_length=500)
+    update_day = models.DateTimeField(auto_now=True)
+    create_day = models.DateTimeField(auto_now_add=True)
