@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpDate_Post</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="title">title:</label>
+            <input id="title" type="text" name = "title" value = "{{post.title}}"/>      
+        </div>
+
+        <div>
+            <label for="description">description:</label>
+            <textarea id="description" name = "description" clos="40" rows = "5">{{post.description}}></textarea>
+        </div>
+        
+        <div>
+            <button type="submit">submit</button>
+        </div>
+    </form>
+</body>
+</html>
