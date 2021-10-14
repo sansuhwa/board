@@ -52,10 +52,8 @@ def update_post(requset, post_id):
         return render(requset, 'detail_post.html', context=context)
 
 
-def delete_post(req, post_id):
+def delete_post(request, post_id):
     post=Post.objects.get(id=post_id)
     post.delete()
-    post.save()
-    response = redirect('/board/')
-    return response
+    return redirect('/board/')
     
