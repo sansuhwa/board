@@ -32,8 +32,9 @@ def create_post(request):
         return render(request, 'detail_post.html', context=context)
 
 def update_post(requset, post_id):
+    post = Post.objects.get(id=post_id)
     if requset.method == 'GET':
-        post = Post.objects.get(id=post_id)
+        
         context = {
             'post': post
         }
@@ -42,7 +43,6 @@ def update_post(requset, post_id):
         post_model: dict = requset.POST
         post_model_title = post_model['title']
         post_model_description = post_model['description']
-        post = Post.objects.get(id=post_id)
         post.title = post_model_title
         post.description = post_model_description
         post.save()
